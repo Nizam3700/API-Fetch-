@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap link  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- css link  -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- favicon link  -->
+    <link rel="shortcut icon" href="https://www.joshmorony.com/images/icons/cloud-upload-download.png" type="image/x-icon">
+    <title>Js API Fetch</title>
+</head>
+<body>
+
+    <!-- nav bar start  -->
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <a class="navbar-brand" href="https://sites.google.com/view/hmfronlineservice/home"><h2><span class="brand-highlight">HMFR</span> Online Service</h2></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link btn" href="index.html"><i class="fa-solid fa-house-user"></i> Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn" href="login.html"><i class="fa-solid fa-user-plus"></i> Login</a>
+              </li>
+            <li class="nav-item active">
+              <a class="nav-link btn" href="signup.html"><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- nav bar ends  -->
+
+      <!-- container starts  -->
+      <div class="container-fluid mt-0">
+        <h2 class="brand-highlight" style="text-align: center;font-weight: bold;padding: 10px;">Fetch API <img src="https://www.joshmorony.com/images/icons/cloud-upload-download.png" alt="Api"></h2>
+        <div class="row" id="cards-container">
+        </div>
+    </div>
+
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div class="container text-center">
+            <h3>Contact Us
+
+                <a  href="https://www.whatsapp.com/catalog/917396183700/?app_absent=0" target="_blank"><i class="fa-brands fa-square-whatsapp fa-xl fa-beat-fade" id="contact_Whatsapp"></i></a>
+            
+                <a  href="https://www.linkedin.com/in/shaik-nizamuddin-backend" target="_blank"><i class="fa-brands fa-linkedin fa-xl fa-beat-fade" id="contact_LinkedIn" ></i></a>
+            </h3>
+
+          
+        </div>
+    </footer>
+    <!-- container ends  -->
+
+
+    <!-- js starts  -->
+    <script>
+        // Function to fetch data from API 
+        function fetch_data(api_url, limit = 20) {
+            return fetch(api_url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Error: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => data.slice(0, limit)) // Extract only the first 'limit' items
+                .catch(error => {
+                    console.error(`An error occurred: ${error.message}`);
+                    return null;
+                });
+        }
+
+        // Function to display data in cards
+        function display_data_in_cards(data) {
+            const cardsContainer = document.getElementById("cards-container");
+
+            data.forEach(item => {
+                const card = document.createElement("div");
+                card.className = "card col-md-3 mb-5 "; // Use col-md-3 for 4 columns
+                card.innerHTML = `
+                    <div class="card-body">
+                        <h5 class="card-title">${item.title}</h5>
+                        <p class="card-text">${item.body}</p>
+                    </div>
+                `;
+                cardsContainer.appendChild(card);
+            });
+        }
+
+        // Example usage:
+        const api_url = "https://jsonplaceholder.typicode.com/posts";  // Replace with your API endpoint
+        fetch_data(api_url)
+            .then(data => {
+                if (data) {
+                    display_data_in_cards(data);
+                }
+            });
+    </script>
+    <!-- js ends  -->
+
+  
+    <!-- bootstrap js links  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

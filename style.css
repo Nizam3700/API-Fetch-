@@ -1,0 +1,123 @@
+body {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #142d4c, #b2cff3,green);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .navbar{
+    background-color: transparent;
+  }
+.brand-highlight{
+    color:rgb(248, 233, 61);
+}
+.navbar .nav-link{
+    border: 2px solid #303131;
+   color: #ccc;
+    font-size: large !important;
+    margin: 10px;
+    border-radius: 25px;
+  } 
+
+  .navbar .nav-link:hover{
+    background-color: #4caf50;
+    color: rgb(14, 13, 13) !important;
+    border-color: white;
+    transition: background-color 0.5s linear;
+
+  }
+  h2:hover{
+    color: #4caf50;
+  }
+  
+  .btn{
+      /* background-color:#8fbaef; */
+      /* color: #f67280; */
+      font-size: large;
+     
+      letter-spacing: 2px;
+  }
+  .btn:hover{
+    background-color: #4caf50;
+    color:#142d4c;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    background-color: #e3e3e3; 
+}
+
+img{
+    height: 50px;
+}
+.container-fluid {
+   
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #b2b2b2;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer{
+    background-color: transparent;
+    color: black;
+    padding: 20px;
+}
+
+/* Contact  */
+#contact_Whatsapp{
+    color: #08CA08;
+
+}
+#contact_Whatsapp:hover{
+    color: #80ef7c;
+}
+#contact_LinkedIn{
+    color: #087FB7;
+}
+#contact_LinkedIn:hover{
+    color: #74b7d7;
+}

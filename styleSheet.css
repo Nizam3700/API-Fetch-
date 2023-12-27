@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background: #b2cff3;  */
+    background: linear-gradient(to right, #0d344a, #cddaeb,green);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.navbar{
+    background-color: transparent;
+  }
+  .navbar .nav-link{
+    border: 2px solid #303131;
+   color: #ccc;
+    font-size: large !important;
+    margin: 10px;
+    border-radius: 25px;
+  } 
+
+  .navbar .nav-link:hover{
+    background-color: #4caf50;
+    color: rgb(14, 13, 13) !important;
+    transition: background-color 0.5s linear;
+
+  }
+  .brand-highlight{
+    color: darkorange;
+}
+  h2:hover{
+    color: #4caf50;
+  }
+  
+  .btn{
+      background-color:#9b7db4;
+      color: Black;
+      font-size: large;
+     
+      letter-spacing: 2px;
+  }
+  .btn:hover{
+    background-color: #ccc;
+    color:black;
+  }
+.container {
+    max-width: 400px;
+    margin: 30px auto;
+    background-color: lightsteelblue;
+    border: 2px solid grey;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ccc;
+}
+
+a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
